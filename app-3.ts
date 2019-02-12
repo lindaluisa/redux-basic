@@ -27,9 +27,9 @@ console.log( store.getState() );
 store.dispatch( incrementAction ); 
 store.dispatch( incrementAction ); 
 
-console.log( store.getState() );
+console.log( store.getState() ); // 12
 
 store.dispatch( multiplyAction ); 
 
-console.log( store.getState() );
+console.log( store.getState() ); // 24
 

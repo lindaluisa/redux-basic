@@ -12,6 +12,7 @@
     "ts-node": "^8.0.2"
   },
   "dependencies": {
+    "redux": "^4.0.1",
     "typescript": "^3.3.3"
   }
 }

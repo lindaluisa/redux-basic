@@ -22,7 +22,11 @@ export class ChildComponent implements OnInit {
   divide() {
     this.counter /= 2;
     this.changeCounter.emit(this.counter);
+  }
 
+  resetGrandchild( newCounter ) {
+    this.counter = newCounter;
+    this.changeCounter.emit(this.counter);
   }
 
 }

@@ -7,3 +7,15 @@
     <button (click)="divide()"class="btn btn-info">Divide</button>
   </div>
 </div>
+
+<div class="row">
+  <div class="col">
+    <app-grandchild [counter]="counter" (counterChanged)="resetGrandchild($event)"></app-grandchild>
+  </div>
+</div>
+
+<!-- RECAP -->
+<!--  
+(counterChanged)="resetGrandchild($event)"
+equal to event refers to whatever the EventEmitter counterChanged emits
+-->

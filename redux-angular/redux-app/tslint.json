@@ -1,37 +1,69 @@
 {
   "rulesDirectory": [
-    "codelyzer"
+    // set of tslint rules for static code analysis of Ang TS projects
+    "codelyzer" 
   ],
   "rules": {
-    "arrow-return-shorthand": true,
+    // allow for omitting return statement
+    // from () => { return x; } to () => x
+    "arrow-return-shorthand": true, 
+    // an interface with just a call signature can be written as a fn type
+    // new():T just like ():T
     "callable-types": true,
+    // class names need to be PascalCased (e.g., MyClass)
     "class-name": true,
+    // formatting rulles for single-line comments
+    // all single line mus start with a comment
+    // configurable: check-lowercase, {"ignore-word"; ["e.g., TODO", "HACK"]}
     "comment-format": [
       true,
       "check-space"
     ],
-    "curly": true,
+    // enforce braces
+    "curly": true, 
+    // warns when deprecated APIS are used
     "deprecation": {
       "severity": "warn"
     },
+    // ensures file ends with a new line
     "eofline": true,
+    // requires if statement when for loop is used
     "forin": true,
+    // blocks importing specified modules via import and require
+    // importing some library directly can cause unused submodules to be loaded
+    // better practice to import directly the submodules that are needed
     "import-blacklist": [
       true,
       "rxjs/Rx"
     ],
+    // proper spacing when importing modules
     "import-spacing": true,
+    // inforces indentation
+    // configurable spaces /o tabs, adding number 
     "indent": [
       true,
-      "spaces"
+      "tabs",
+      2
     ],
+    // prefer interface > type literal
+    // interfaces can be implemented, extended and merged
     "interface-over-type-literal": true,
+    // use labels only scarcely (e.g., on for/switch statements)
     "label-position": true,
+    // requires lines to be under a certain max length
+    // configurable: e.g., "ignore-pattern" in case of regular expression
     "max-line-length": [
       true,
       140
     ],
+    // private members in classes should be denoted with private keyword
+    // configurable e.g., "no-public"
     "member-access": false,
+    // enforced member ordering
+    // rational: makes classes easier to read, navigate and edit
+    // aims to separate groups, consider splitting class responsibilities apart
+    // across multiple single-responsibility classes
+    // a lot of options *see at end of file
     "member-ordering": [
       true,
       {
@@ -43,8 +75,12 @@
         ]
       }
     ],
+
     "no-arg": true,
+    // disallows operators like << &=  & |
+    // does not band the use of & and | for intersection and union types
     "no-bitwise": true,
+    // bans the usef o specified console methods, except for the ones mentioned below
     "no-console": [
       true,
       "debug",
@@ -129,3 +165,17 @@
     "directive-class-suffix": true
   }
 }
+
+/*
+* \`fields-first\` puts, in order of precedence:
+* fields before constructors before methods
+* static members before instance members
+* public members before protected members before private members */
+
+/* \`statics-first\` puts, in order of precedence:
+* static members before instance members
+    * public members before protected members before private members
+    * fields before methods
+* instance fields before constructors before instance methods
+    * fields before constructors before methods
+    * public members before protected members before private members */

@@ -17,7 +17,7 @@ import { GrandchildComponent } from './counter/grandchild/grandchild.component';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({count: counterReducer })
+    StoreModule.forRoot({ counter: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
